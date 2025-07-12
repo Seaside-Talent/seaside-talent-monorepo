@@ -1,0 +1,31 @@
+/* app/globals.css or styles/globals.css */
+
+/* Import your custom font variables (they are available globally due to layout.js setup) */
+/* You don't re-import the font files here, just use the variables defined by next/font */
+
+/* Override Bootstrap's font variables */
+:root {
+  /* Set the default sans-serif font to Geist Sans */
+  --bs-font-sans-serif: var(--font-geist-sans), sans-serif;
+
+  /* If you want a specific monospace font for Bootstrap's code/pre elements */
+  --bs-font-monospace: var(--font-geist-mono), monospace;
+
+  /* This ensures the body and most text elements use your desired font */
+  --bs-body-font-family: var(--bs-font-sans-serif);
+}
+
+/* Optional: Apply Geist Mono to specific elements if needed beyond Bootstrap's monospace usage */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* You might want to remove Bootstrap's default margin for the body */
+body {
+  margin: 0;
+}
+
+/* Any other global styles you have */
