@@ -1,50 +1,31 @@
+/* app/globals.css or styles/globals.css */
+
+/* Import your custom font variables (they are available globally due to layout.js setup) */
+/* You don't re-import the font files here, just use the variables defined by next/font */
+
+/* Override Bootstrap's font variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Set the default sans-serif font to Geist Sans */
+  --bs-font-sans-serif: var(--font-geist-sans), sans-serif;
+
+  /* If you want a specific monospace font for Bootstrap's code/pre elements */
+  --bs-font-monospace: var(--font-geist-mono), monospace;
+
+  /* This ensures the body and most text elements use your desired font */
+  --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Optional: Apply Geist Mono to specific elements if needed beyond Bootstrap's monospace usage */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-geist-mono), monospace;
 }
 
-html,
+/* You might want to remove Bootstrap's default margin for the body */
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.imgDark {
-  display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  .imgLight {
-    display: none;
-  }
-  .imgDark {
-    display: unset;
-  }
-}
+/* Any other global styles you have */
